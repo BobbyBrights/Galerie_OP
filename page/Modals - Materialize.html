@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="description" content="Materialize is a modern responsive CSS framework based on Material Design by Google. ">
+    <title>Modals - Materialize</title>
+    <!-- Favicons-->
+    <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
+    <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
+    <!--  Android 5 Chrome Color-->
+    <meta name="theme-color" content="#EE6E73">
+    <!-- CSS-->
+    <style style="display:none">/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+scss+bash */
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+/*	text-shadow: 0 1px white;*/
+	font-family: 'Inconsolata', Monaco, Consolas, 'Andale Mono', monospace;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	line-height: 1.4;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important {
+	font-weight: bold;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+
+</style>
+
+    <link href="css/ghpages-materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script>
+      window.liveSettings = {
+        api_key: "a0b49b34b93844c38eaee15690d86413",
+        picker: "bottom-right",
+        detectlang: true,
+        dynamic: true,
+        autocollect: true
+      };
+    </script>
+    <script src="//cdn.transifex.com/live.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="top-nav">
+        <div class="container">
+          <div class="nav-wrapper"><a class="page-title">Modals</a></div>
+        </div>
+      </nav>
+      <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
+      <ul id="nav-mobile" class="side-nav fixed">
+        <li class="logo"><a id="logo-container" href="http://materializecss.com/" class="brand-logo">
+            <object id="front-page-logo" type="image/svg+xml" data="res/materialize.svg">Your browser does not support SVG</object></a></li>
+        <li class="search">
+          <div class="search-wrapper card">
+            <input id="search"><i class="material-icons">search</i>
+            <div class="search-results"></div>
+          </div>
+        </li>
+        <li class="bold"><a href="about.html" class="waves-effect waves-teal">About</a></li>
+        <li class="bold"><a href="getting-started.html" class="waves-effect waves-teal">Getting Started</a></li>
+        <li class="no-padding">
+          <ul class="collapsible collapsible-accordion">
+            <li class="bold"><a class="collapsible-header  waves-effect waves-teal">CSS</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="color.html">Color</a></li>
+                  <li><a href="grid.html">Grid</a></li>
+                  <li><a href="helpers.html">Helpers</a></li>
+                  <li><a href="media-css.html">Media</a></li>
+                  <li><a href="sass.html">Sass</a></li>
+                  <li><a href="shadow.html">Shadow</a></li>
+                  <li><a href="table.html">Table</a></li>
+                  <li><a href="typography.html">Typography</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Components</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="badges.html">Badges</a></li>
+                  <li><a href="buttons.html">Buttons</a></li>
+                  <li><a href="breadcrumbs.html">Breadcrumbs</a></li>
+                  <li><a href="cards.html">Cards</a></li>
+                  <li><a href="chips.html">Chips</a></li>
+                  <li><a href="collections.html">Collections</a></li>
+                  <li><a href="footer.html">Footer</a></li>
+                  <li><a href="forms.html">Forms</a></li>
+                  <li><a href="icons.html">Icons</a></li>
+                  <li><a href="navbar.html">Navbar</a></li>
+                  <li><a href="pagination.html">Pagination</a></li>
+                  <li><a href="preloader.html">Preloader</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="bold"><a class="collapsible-header active waves-effect waves-teal">JavaScript</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="collapsible.html">Collapsible</a></li>
+                  <li><a href="dialogs.html">Dialogs</a></li>
+                  <li><a href="dropdown.html">Dropdown</a></li>
+                  <li><a href="media.html">Media</a></li>
+                  <li class="active"><a href="modals.html">Modals</a></li>
+                  <li><a href="parallax.html">Parallax</a></li>
+                  <li><a href="pushpin.html">Pushpin</a></li>
+                  <li><a href="scrollfire.html">ScrollFire</a></li>
+                  <li><a href="scrollspy.html">Scrollspy</a></li>
+                  <li><a href="side-nav.html">SideNav</a></li>
+                  <li><a href="tabs.html">Tabs</a></li>
+                  <li><a href="transitions.html">Transitions</a></li>
+                  <li><a href="waves.html">Waves</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="bold"><a href="http://materializecss.com/mobile.html" class="waves-effect waves-teal">Mobile</a></li>
+        <li class="bold"><a href="showcase.html" class="waves-effect waves-teal">Showcase</a></li>
+      </ul>
+    </header>
+    <main><div class="container bsa">
+  <div class="row">
+    <div class="col s12 m9 l10">
+
+      <div id="introduction" class="section scrollspy">
+        <h4>Introduction</h4>
+        <p>Use a modal for dialog boxes, confirmation messages, or other content that can be called up. In order for the modal to work you have to add the Modal ID to the link of the trigger. To add a close button, just add the class <code class="language-css">.modal-close</code> to your button.</p>
+        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="waves-effect waves-light btn modal-trigger" href="#modal2">Modal With Fixed Footer</a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="waves-effect waves-light btn modal-trigger" href="#modal3">Modal Bottom Sheet Style</a>
+        <div id="modal1" class="modal">
+          <div class="modal-content">
+            <h4>Modal Header</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat ">Disagree</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+          </div>
+        </div>
+        <div id="modal2" class="modal modal-fixed-footer">
+          <div class="modal-content">
+            <h4>Modal Header</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat ">Disagree</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+          </div>
+        </div>
+        <div id="modal3" class="modal bottom-sheet">
+          <div class="modal-content">
+            <h4>Modal Header</h4>
+            <ul class="collection">
+              <li class="collection-item avatar">
+                <img src="http://1.1.1.1/bmi/materializecss.com/images/yuna.jpg" alt="" class="circle">
+                <span class="title">Title</span>
+                <p>First Line <br>
+                   Second Line
+                </p>
+                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+              </li>
+              <li class="collection-item avatar">
+                <i class="material-icons circle">folder</i>
+                <span class="title">Title</span>
+                <p>First Line <br>
+                   Second Line
+                </p>
+                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+              </li>
+              <li class="collection-item avatar">
+                <i class="material-icons circle green">assessment</i>
+                <span class="title">Title</span>
+                <p>First Line <br>
+                   Second Line
+                </p>
+                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+              </li>
+              <li class="collection-item avatar">
+                <i class="material-icons circle red">play_arrow</i>
+                <span class="title">Title</span>
+                <p>First Line <br>
+                   Second Line
+                </p>
+                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+
+        <div id="structure" class="scrollspy section">
+          <h4>Modals HTML Structure</h4>
+          <pre><code class="language-markup">
+  &lt;!-- Modal Trigger -->
+  &lt;a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal&lt;/a>
+
+  &lt;!-- Modal Structure -->
+  &lt;div id="modal1" class="modal">
+    &lt;div class="modal-content">
+      &lt;h4>Modal Header&lt;/h4>
+      &lt;p>A bunch of text&lt;/p>
+    &lt;/div>
+    &lt;div class="modal-footer">
+      &lt;a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree&lt;/a>
+    &lt;/div>
+  &lt;/div>
+          </code></pre>
+        </div>
+
+
+        <div id="fixed-footer" class="scrollspy section">
+          <h4>Modals with Fixed Footer</h4>
+          <p>If you have content that is very long and you want the action buttons to be visible all the time, you can add the <code class="language-markup">modal-fixed-footer</code> class to the modal. </p>
+          <pre><code class="language-markup">
+  &lt;!-- Modal Trigger -->
+  &lt;a class="modal-trigger waves-effect waves-light btn" href="#modal1">Modal&lt;/a>
+
+  &lt;!-- Modal Structure -->
+  &lt;div id="modal1" class="modal modal-fixed-footer">
+    &lt;div class="modal-content">
+      &lt;h4>Modal Header&lt;/h4>
+      &lt;p>A bunch of text&lt;/p>
+    &lt;/div>
+    &lt;div class="modal-footer">
+      &lt;a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree&lt;/a>
+    &lt;/div>
+  &lt;/div>
+          </code></pre>
+        </div>
+
+        <div id="bottom-sheet" class="scrollspy section">
+          <h4>Bottom Sheet Modals</h4>
+          <p>Bottom Sheet Modals are good for displaying actions to the user on the bottom of a screen. They still act the same as regular modals.</p>
+          <pre><code class="language-markup">
+  &lt;!-- Modal Trigger -->
+  &lt;a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal&lt;/a>
+
+  &lt;!-- Modal Structure -->
+  &lt;div id="modal1" class="modal bottom-sheet">
+    &lt;div class="modal-content">
+      &lt;h4>Modal Header&lt;/h4>
+      &lt;p>A bunch of text&lt;/p>
+    &lt;/div>
+    &lt;div class="modal-footer">
+      &lt;a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree&lt;/a>
+    &lt;/div>
+  &lt;/div>
+          </code></pre>
+        </div>
+
+        <div id="button-trigger" class="scrollspy section">
+          <h4>Modals with Button trigger</h4>
+          <p>If you prefer to use a button to open a modal specify the Modal ID in <code class="language-markup">data-target</code> rather that the href attribute. </p>
+
+          <pre><code class="language-markup">
+  &lt;!-- Modal Trigger -->
+  &lt;button data-target="modal1" class="btn modal-trigger">Modal&lt;/button>
+          </code></pre>
+        </div>
+
+
+
+        <div id="initialization" class="scrollspy section">
+          <h4>jQuery Plugin Initialization</h4>
+          <p>To open a modal using a trigger:</p>
+          <pre><code class="language-javascript">
+  $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+  });
+          </code></pre>
+          <p>You can also open modals programatically, the below code will make your modal open on document ready:</p>
+          <pre><code class="language-javascript">
+  $('#modal1').openModal();
+          </code></pre>
+          <p>You can also close them programatically:</p>
+          <pre><code class="language-javascript">
+  $('#modal1').closeModal();
+        </code></pre>
+      </div>
+
+
+
+      <div id="options" class="scrollspy section">
+        <h4>Options</h4>
+        <p>You can customize the behavior of each modal using these options. For example, you can call a custom function to run when a modal is dismissed. To do this, just place your function in the intialization code as shown below.</p>
+        <pre><code class="language-javascript">
+  $('.modal-trigger').leanModal({
+      dismissible: true, // Modal can be dismissed by clicking outside of the modal
+      opacity: .5, // Opacity of modal background
+      in_duration: 300, // Transition in duration
+      out_duration: 200, // Transition out duration
+      ready: function() { alert('Ready'); }, // Callback for Modal open
+      complete: function() { alert('Closed'); } // Callback for Modal close
+    }
+  );
+      </code></pre>
+    </div>
+
+</div>
+
+<!-- Table of Contents -->
+  <div class="col hide-on-small-only m3 l2">
+    <div class="toc-wrapper">
+      <div class="buysellads hide-on-small-only">
+        <!-- CarbonAds Zone Code -->
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=materializecss" id="_carbonads_js"></script>
+      </div>
+      <div style="height: 1px;">
+        <ul class="section table-of-contents">
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#structure">Structure</a></li>
+          <li><a href="#fixed-footer">Fixed Footer</a></li>
+          <li><a href="#bottom-sheet">Bottom Sheet</a></li>
+          <li><a href="#button-trigger">Button Trigger</a></li>
+          <li><a href="#initialization">Intialization</a></li>
+          <li><a href="#options">Options</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+    </main>    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l4 s12">
+            <h5 class="white-text">Help Materialize Grow</h5>
+            <p class="grey-text text-lighten-4">We hope you have enjoyed using Materialize! If you feel Materialize has helped you out and want to support the team, send us over a donation! Any amount would help support and continue development on this project and is greatly appreciated.</p>
+            <form id="paypal-donate" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHLwYJKoZIhvcNAQcEoIIHIDCCBxwCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYC2O5rnsmP26R+2wNew3Jc3rCzBzw8LpJh1TTRZyMIFMYv/voKC1TMEvxU0ct4gdsZ29zARE96gRsCPVtVpY1hGr0NivLXeiHyw3xoW9UfzjcI9gZy5PZYoNv2xkTMj+jUkzuBMDiB2JfrIH7ZNxbcK1m/ep7Luoo1CR8JmYNCtlzELMAkGBSsOAwIaBQAwgawGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQI/PHaKaPxsg2AgYh0FZUDlxXaZSGYZJiUkF4L0p9hZn0tYmT6kqOqB50541GOsZtJSVAO/F+Qz5I9EsCuGve7GLKSBufhNjWa24ay5T2hkGJkAzISlqS2qBQSFDDpHDyEnNSZ2vPG2K8Bepc/SQD5nurs+vyC55axU4OnG33RBEtAmdOrAlZGxwzDBSjg4us1epUyoIIDhzCCA4MwggLsoAMCAQICAQAwDQYJKoZIhvcNAQEFBQAwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tMB4XDTA0MDIxMzEwMTMxNVoXDTM1MDIxMzEwMTMxNVowgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDBR07d/ETMS1ycjtkpkvjXZe9k+6CieLuLsPumsJ7QC1odNz3sJiCbs2wC0nLE0uLGaEtXynIgRqIddYCHx88pb5HTXv4SZeuv0Rqq4+axW9PLAAATU8w04qqjaSXgbGLP3NmohqM6bV9kZZwZLR/klDaQGo1u9uDb9lr4Yn+rBQIDAQABo4HuMIHrMB0GA1UdDgQWBBSWn3y7xm8XvVk/UtcKG+wQ1mSUazCBuwYDVR0jBIGzMIGwgBSWn3y7xm8XvVk/UtcKG+wQ1mSUa6GBlKSBkTCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb22CAQAwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQUFAAOBgQCBXzpWmoBa5e9fo6ujionW1hUhPkOBakTr3YCDjbYfvJEiv/2P+IobhOGJr85+XHhN0v4gUkEDI8r2/rNk1m0GA8HKddvTjyGw/XqXa+LSTlDYkqI8OwR8GEYj4efEtcRpRYBxV8KxAW93YDWzFGvruKnnLbDAF6VR5w/cCMn5hzGCAZowggGWAgEBMIGUMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbQIBADAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMTQxMjE1MDcwNTI3WjAjBgkqhkiG9w0BCQQxFgQUTOnEae05+jEbHsz0um3L3/Cl/zgwDQYJKoZIhvcNAQEBBQAEgYAGuieIpSk7XCxyo4RieZQ/SO0EHUYEW9B7KFJB9qZ1+yCKpUm7prwsGGOJAAdqKOw59I7qjLQI5cFJz/O8Ivb14TclAZiKTnOCB/wO1QHp+9s+hF00D6v0TDetLm0GLnk/7ljWvNq1pTyiMTLVg4yw1dAzQE1tC6bYTtLuDhLl0Q==-----END PKCS7-----
+">
+<button class="btn waves-effect waves-light red lighten-3" type="submit" name="action" alt="PayPal - The safer, easier way to pay online!">Donate Now
+</button>
+</form>
+
+          </div>
+          <div class="col l4 s12">
+            <h5 class="white-text">Join the Discussion</h5>
+            <p class="grey-text text-lighten-4">We have a Gitter chat room set up where you can talk directly with us. Come in and discuss new features, future goals, general problems or questions, or anything else you can think of.</p>
+            <a class="btn waves-effect waves-light red lighten-3" target="_blank" href="https://gitter.im/Dogfalo/materialize">Chat</a>
+          </div>
+          <div class="col l4 s12" style="overflow: hidden;">
+            <h5 class="white-text">Connect</h5>
+            <iframe src="http://ghbtns.com/github-btn.html?user=dogfalo&repo=materialize&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
+            <br>
+            <a href="https://twitter.com/MaterializeCSS" class="twitter-follow-button" data-show-count="true" data-size="large" data-dnt="true">Follow @MaterializeCSS</a>
+            <br>
+            <div class="g-follow" data-annotation="bubble" data-height="24" data-href="https://plus.google.com/108619793845925798422" data-rel="publisher"></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2014-2015 Materialize, All rights reserved.
+        <a class="grey-text text-lighten-4 right" href="https://github.com/Dogfalo/materialize/blob/master/LICENSE">MIT License</a>
+        </div>
+      </div>
+    </footer>
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>if (!window.jQuery) { document.write('<script src="bin/jquery-2.1.1.min.js"><\/script>'); }
+    </script>
+    <script  style="display:none">
+<!--
+!function(t){"function"==typeof define&&define.amd?define(["jquery"],t):t(jQuery)}(function(t){function e(){var e=a(this),o=r.settings;return isNaN(e.datetime)||(0==o.cutoff||Math.abs(n(e.datetime))<o.cutoff)&&t(this).text(i(e.datetime)),this}function a(e){if(e=t(e),!e.data("timeago")){e.data("timeago",{datetime:r.datetime(e)});var a=t.trim(e.text());r.settings.localeTitle?e.attr("title",e.data("timeago").datetime.toLocaleString()):!(a.length>0)||r.isTime(e)&&e.attr("title")||e.attr("title",a)}return e.data("timeago")}function i(t){return r.inWords(n(t))}function n(t){return(new Date).getTime()-t.getTime()}t.timeago=function(e){return i(e instanceof Date?e:"string"==typeof e?t.timeago.parse(e):"number"==typeof e?new Date(e):t.timeago.datetime(e))};var r=t.timeago;t.extend(t.timeago,{settings:{refreshMillis:6e4,allowPast:!0,allowFuture:!1,localeTitle:!1,cutoff:0,strings:{prefixAgo:null,prefixFromNow:null,suffixAgo:"ago",suffixFromNow:"from now",inPast:"any moment now",seconds:"less than a minute",minute:"about a minute",minutes:"%d minutes",hour:"about an hour",hours:"about %d hours",day:"a day",days:"%d days",month:"about a month",months:"%d months",year:"about a year",years:"%d years",wordSeparator:" ",numbers:[]}},inWords:function(e){function a(a,n){var r=t.isFunction(a)?a(n,e):a,o=i.numbers&&i.numbers[n]||n;return r.replace(/%d/i,o)}if(!this.settings.allowPast&&!this.settings.allowFuture)throw"timeago allowPast and allowFuture settings can not both be set to false.";var i=this.settings.strings,n=i.prefixAgo,r=i.suffixAgo;if(this.settings.allowFuture&&0>e&&(n=i.prefixFromNow,r=i.suffixFromNow),!this.settings.allowPast&&e>=0)return this.settings.strings.inPast;var o=Math.abs(e)/1e3,s=o/60,u=s/60,m=u/24,l=m/365,d=45>o&&a(i.seconds,Math.round(o))||90>o&&a(i.minute,1)||45>s&&a(i.minutes,Math.round(s))||90>s&&a(i.hour,1)||24>u&&a(i.hours,Math.round(u))||42>u&&a(i.day,1)||30>m&&a(i.days,Math.round(m))||45>m&&a(i.month,1)||365>m&&a(i.months,Math.round(m/30))||1.5>l&&a(i.year,1)||a(i.years,Math.round(l)),f=i.wordSeparator||"";return void 0===i.wordSeparator&&(f=" "),t.trim([n,d,r].join(f))},parse:function(e){var a=t.trim(e);return a=a.replace(/\.\d+/,""),a=a.replace(/-/,"/").replace(/-/,"/"),a=a.replace(/T/," ").replace(/Z/," UTC"),a=a.replace(/([\+\-]\d\d)\:?(\d\d)/," $1$2"),a=a.replace(/([\+\-]\d\d)$/," $100"),new Date(a)},datetime:function(e){var a=t(e).attr(r.isTime(e)?"datetime":"title");return r.parse(a)},isTime:function(e){return"time"===t(e).get(0).tagName.toLowerCase()}});var o={init:function(){var a=t.proxy(e,this);a();var i=r.settings;i.refreshMillis>0&&(this._timeagoInterval=setInterval(a,i.refreshMillis))},update:function(a){var i=r.parse(a);t(this).data("timeago",{datetime:i}),r.settings.localeTitle&&t(this).attr("title",i.toLocaleString()),e.apply(this)},updateFromDOM:function(){t(this).data("timeago",{datetime:r.parse(t(this).attr(r.isTime(this)?"datetime":"title"))}),e.apply(this)},dispose:function(){this._timeagoInterval&&(window.clearInterval(this._timeagoInterval),this._timeagoInterval=null)}};t.fn.timeago=function(t,e){var a=t?o[t]:o.init;if(!a)throw new Error("Unknown function name '"+t+"' for timeago");return this.each(function(){a.call(this,e)}),this},document.createElement("abbr"),document.createElement("time")});
+//-->
+</script>
+    <script src="js/prism.js"></script>
+    <script  style="display:none">
+<!--
+/**
+ * lunr - http://lunrjs.com - A bit like Solr, but much smaller and not as bright - 0.5.12
+ * Copyright (C) 2015 Oliver Nightingale
+ * MIT Licensed
+ * @license
+ */
+!function(){var t=function(e){var n=new t.Index;return n.pipeline.add(t.trimmer,t.stopWordFilter,t.stemmer),e&&e.call(n,n),n};t.version="0.5.12",t.utils={},t.utils.warn=function(t){return function(e){t.console&&console.warn&&console.warn(e)}}(this),t.EventEmitter=function(){this.events={}},t.EventEmitter.prototype.addListener=function(){var t=Array.prototype.slice.call(arguments),e=t.pop(),n=t;if("function"!=typeof e)throw new TypeError("last argument must be a function");n.forEach(function(t){this.hasHandler(t)||(this.events[t]=[]),this.events[t].push(e)},this)},t.EventEmitter.prototype.removeListener=function(t,e){if(this.hasHandler(t)){var n=this.events[t].indexOf(e);this.events[t].splice(n,1),this.events[t].length||delete this.events[t]}},t.EventEmitter.prototype.emit=function(t){if(this.hasHandler(t)){var e=Array.prototype.slice.call(arguments,1);this.events[t].forEach(function(t){t.apply(void 0,e)})}},t.EventEmitter.prototype.hasHandler=function(t){return t in this.events},t.tokenizer=function(t){return arguments.length&&null!=t&&void 0!=t?Array.isArray(t)?t.map(function(t){return t.toLowerCase()}):t.toString().trim().toLowerCase().split(/[\s\-]+/):[]},t.Pipeline=function(){this._stack=[]},t.Pipeline.registeredFunctions={},t.Pipeline.registerFunction=function(e,n){n in this.registeredFunctions&&t.utils.warn("Overwriting existing registered function: "+n),e.label=n,t.Pipeline.registeredFunctions[e.label]=e},t.Pipeline.warnIfFunctionNotRegistered=function(e){var n=e.label&&e.label in this.registeredFunctions;n||t.utils.warn("Function is not registered with pipeline. This may cause problems when serialising the index.\n",e)},t.Pipeline.load=function(e){var n=new t.Pipeline;return e.forEach(function(e){var i=t.Pipeline.registeredFunctions[e];if(!i)throw new Error("Cannot load un-registered function: "+e);n.add(i)}),n},t.Pipeline.prototype.add=function(){var e=Array.prototype.slice.call(arguments);e.forEach(function(e){t.Pipeline.warnIfFunctionNotRegistered(e),this._stack.push(e)},this)},t.Pipeline.prototype.after=function(e,n){t.Pipeline.warnIfFunctionNotRegistered(n);var i=this._stack.indexOf(e);if(-1==i)throw new Error("Cannot find existingFn");i+=1,this._stack.splice(i,0,n)},t.Pipeline.prototype.before=function(e,n){t.Pipeline.warnIfFunctionNotRegistered(n);var i=this._stack.indexOf(e);if(-1==i)throw new Error("Cannot find existingFn");this._stack.splice(i,0,n)},t.Pipeline.prototype.remove=function(t){var e=this._stack.indexOf(t);-1!=e&&this._stack.splice(e,1)},t.Pipeline.prototype.run=function(t){for(var e=[],n=t.length,i=this._stack.length,o=0;n>o;o++){for(var r=t[o],s=0;i>s&&(r=this._stack[s](r,o,t),void 0!==r);s++);void 0!==r&&e.push(r)}return e},t.Pipeline.prototype.reset=function(){this._stack=[]},t.Pipeline.prototype.toJSON=function(){return this._stack.map(function(e){return t.Pipeline.warnIfFunctionNotRegistered(e),e.label})},t.Vector=function(){this._magnitude=null,this.list=void 0,this.length=0},t.Vector.Node=function(t,e,n){this.idx=t,this.val=e,this.next=n},t.Vector.prototype.insert=function(e,n){this._magnitude=void 0;var i=this.list;if(!i)return this.list=new t.Vector.Node(e,n,i),this.length++;if(e<i.idx)return this.list=new t.Vector.Node(e,n,i),this.length++;for(var o=i,r=i.next;void 0!=r;){if(e<r.idx)return o.next=new t.Vector.Node(e,n,r),this.length++;o=r,r=r.next}return o.next=new t.Vector.Node(e,n,r),this.length++},t.Vector.prototype.magnitude=function(){if(this._magnitude)return this._magnitude;for(var t,e=this.list,n=0;e;)t=e.val,n+=t*t,e=e.next;return this._magnitude=Math.sqrt(n)},t.Vector.prototype.dot=function(t){for(var e=this.list,n=t.list,i=0;e&&n;)e.idx<n.idx?e=e.next:e.idx>n.idx?n=n.next:(i+=e.val*n.val,e=e.next,n=n.next);return i},t.Vector.prototype.similarity=function(t){return this.dot(t)/(this.magnitude()*t.magnitude())},t.SortedSet=function(){this.length=0,this.elements=[]},t.SortedSet.load=function(t){var e=new this;return e.elements=t,e.length=t.length,e},t.SortedSet.prototype.add=function(){var t,e;for(t=0;t<arguments.length;t++)e=arguments[t],~this.indexOf(e)||this.elements.splice(this.locationFor(e),0,e);this.length=this.elements.length},t.SortedSet.prototype.toArray=function(){return this.elements.slice()},t.SortedSet.prototype.map=function(t,e){return this.elements.map(t,e)},t.SortedSet.prototype.forEach=function(t,e){return this.elements.forEach(t,e)},t.SortedSet.prototype.indexOf=function(t){for(var e=0,n=this.elements.length,i=n-e,o=e+Math.floor(i/2),r=this.elements[o];i>1;){if(r===t)return o;t>r&&(e=o),r>t&&(n=o),i=n-e,o=e+Math.floor(i/2),r=this.elements[o]}return r===t?o:-1},t.SortedSet.prototype.locationFor=function(t){for(var e=0,n=this.elements.length,i=n-e,o=e+Math.floor(i/2),r=this.elements[o];i>1;)t>r&&(e=o),r>t&&(n=o),i=n-e,o=e+Math.floor(i/2),r=this.elements[o];return r>t?o:t>r?o+1:void 0},t.SortedSet.prototype.intersect=function(e){for(var n=new t.SortedSet,i=0,o=0,r=this.length,s=e.length,a=this.elements,h=e.elements;;){if(i>r-1||o>s-1)break;a[i]!==h[o]?a[i]<h[o]?i++:a[i]>h[o]&&o++:(n.add(a[i]),i++,o++)}return n},t.SortedSet.prototype.clone=function(){var e=new t.SortedSet;return e.elements=this.toArray(),e.length=e.elements.length,e},t.SortedSet.prototype.union=function(t){var e,n,i;return this.length>=t.length?(e=this,n=t):(e=t,n=this),i=e.clone(),i.add.apply(i,n.toArray()),i},t.SortedSet.prototype.toJSON=function(){return this.toArray()},t.Index=function(){this._fields=[],this._ref="id",this.pipeline=new t.Pipeline,this.documentStore=new t.Store,this.tokenStore=new t.TokenStore,this.corpusTokens=new t.SortedSet,this.eventEmitter=new t.EventEmitter,this._idfCache={},this.on("add","remove","update",function(){this._idfCache={}}.bind(this))},t.Index.prototype.on=function(){var t=Array.prototype.slice.call(arguments);return this.eventEmitter.addListener.apply(this.eventEmitter,t)},t.Index.prototype.off=function(t,e){return this.eventEmitter.removeListener(t,e)},t.Index.load=function(e){e.version!==t.version&&t.utils.warn("version mismatch: current "+t.version+" importing "+e.version);var n=new this;return n._fields=e.fields,n._ref=e.ref,n.documentStore=t.Store.load(e.documentStore),n.tokenStore=t.TokenStore.load(e.tokenStore),n.corpusTokens=t.SortedSet.load(e.corpusTokens),n.pipeline=t.Pipeline.load(e.pipeline),n},t.Index.prototype.field=function(t,e){var e=e||{},n={name:t,boost:e.boost||1};return this._fields.push(n),this},t.Index.prototype.ref=function(t){return this._ref=t,this},t.Index.prototype.add=function(e,n){var i={},o=new t.SortedSet,r=e[this._ref],n=void 0===n?!0:n;this._fields.forEach(function(n){var r=this.pipeline.run(t.tokenizer(e[n.name]));i[n.name]=r,t.SortedSet.prototype.add.apply(o,r)},this),this.documentStore.set(r,o),t.SortedSet.prototype.add.apply(this.corpusTokens,o.toArray());for(var s=0;s<o.length;s++){var a=o.elements[s],h=this._fields.reduce(function(t,e){var n=i[e.name].length;if(!n)return t;var o=i[e.name].filter(function(t){return t===a}).length;return t+o/n*e.boost},0);this.tokenStore.add(a,{ref:r,tf:h})}n&&this.eventEmitter.emit("add",e,this)},t.Index.prototype.remove=function(t,e){var n=t[this._ref],e=void 0===e?!0:e;if(this.documentStore.has(n)){var i=this.documentStore.get(n);this.documentStore.remove(n),i.forEach(function(t){this.tokenStore.remove(t,n)},this),e&&this.eventEmitter.emit("remove",t,this)}},t.Index.prototype.update=function(t,e){var e=void 0===e?!0:e;this.remove(t,!1),this.add(t,!1),e&&this.eventEmitter.emit("update",t,this)},t.Index.prototype.idf=function(t){var e="@"+t;if(Object.prototype.hasOwnProperty.call(this._idfCache,e))return this._idfCache[e];var n=this.tokenStore.count(t),i=1;return n>0&&(i=1+Math.log(this.documentStore.length/n)),this._idfCache[e]=i},t.Index.prototype.search=function(e){var n=this.pipeline.run(t.tokenizer(e)),i=new t.Vector,o=[],r=this._fields.reduce(function(t,e){return t+e.boost},0),s=n.some(function(t){return this.tokenStore.has(t)},this);if(!s)return[];n.forEach(function(e,n,s){var a=1/s.length*this._fields.length*r,h=this,l=this.tokenStore.expand(e).reduce(function(n,o){var r=h.corpusTokens.indexOf(o),s=h.idf(o),l=1,u=new t.SortedSet;if(o!==e){var c=Math.max(3,o.length-e.length);l=1/Math.log(c)}return r>-1&&i.insert(r,a*s*l),Object.keys(h.tokenStore.get(o)).forEach(function(t){u.add(t)}),n.union(u)},new t.SortedSet);o.push(l)},this);var a=o.reduce(function(t,e){return t.intersect(e)});return a.map(function(t){return{ref:t,score:i.similarity(this.documentVector(t))}},this).sort(function(t,e){return e.score-t.score})},t.Index.prototype.documentVector=function(e){for(var n=this.documentStore.get(e),i=n.length,o=new t.Vector,r=0;i>r;r++){var s=n.elements[r],a=this.tokenStore.get(s)[e].tf,h=this.idf(s);o.insert(this.corpusTokens.indexOf(s),a*h)}return o},t.Index.prototype.toJSON=function(){return{version:t.version,fields:this._fields,ref:this._ref,documentStore:this.documentStore.toJSON(),tokenStore:this.tokenStore.toJSON(),corpusTokens:this.corpusTokens.toJSON(),pipeline:this.pipeline.toJSON()}},t.Index.prototype.use=function(t){var e=Array.prototype.slice.call(arguments,1);e.unshift(this),t.apply(this,e)},t.Store=function(){this.store={},this.length=0},t.Store.load=function(e){var n=new this;return n.length=e.length,n.store=Object.keys(e.store).reduce(function(n,i){return n[i]=t.SortedSet.load(e.store[i]),n},{}),n},t.Store.prototype.set=function(t,e){this.has(t)||this.length++,this.store[t]=e},t.Store.prototype.get=function(t){return this.store[t]},t.Store.prototype.has=function(t){return t in this.store},t.Store.prototype.remove=function(t){this.has(t)&&(delete this.store[t],this.length--)},t.Store.prototype.toJSON=function(){return{store:this.store,length:this.length}},t.stemmer=function(){var t={ational:"ate",tional:"tion",enci:"ence",anci:"ance",izer:"ize",bli:"ble",alli:"al",entli:"ent",eli:"e",ousli:"ous",ization:"ize",ation:"ate",ator:"ate",alism:"al",iveness:"ive",fulness:"ful",ousness:"ous",aliti:"al",iviti:"ive",biliti:"ble",logi:"log"},e={icate:"ic",ative:"",alize:"al",iciti:"ic",ical:"ic",ful:"",ness:""},n="[^aeiou]",i="[aeiouy]",o=n+"[^aeiouy]*",r=i+"[aeiou]*",s="^("+o+")?"+r+o,a="^("+o+")?"+r+o+"("+r+")?$",h="^("+o+")?"+r+o+r+o,l="^("+o+")?"+i,u=new RegExp(s),c=new RegExp(h),f=new RegExp(a),d=new RegExp(l),p=/^(.+?)(ss|i)es$/,m=/^(.+?)([^s])s$/,v=/^(.+?)eed$/,y=/^(.+?)(ed|ing)$/,g=/.$/,S=/(at|bl|iz)$/,w=new RegExp("([^aeiouylsz])\\1$"),x=new RegExp("^"+o+i+"[^aeiouwxy]$"),k=/^(.+?[^aeiou])y$/,b=/^(.+?)(ational|tional|enci|anci|izer|bli|alli|entli|eli|ousli|ization|ation|ator|alism|iveness|fulness|ousness|aliti|iviti|biliti|logi)$/,E=/^(.+?)(icate|ative|alize|iciti|ical|ful|ness)$/,_=/^(.+?)(al|ance|ence|er|ic|able|ible|ant|ement|ment|ent|ou|ism|ate|iti|ous|ive|ize)$/,F=/^(.+?)(s|t)(ion)$/,O=/^(.+?)e$/,P=/ll$/,N=new RegExp("^"+o+i+"[^aeiouwxy]$"),T=function(n){var i,o,r,s,a,h,l;if(n.length<3)return n;if(r=n.substr(0,1),"y"==r&&(n=r.toUpperCase()+n.substr(1)),s=p,a=m,s.test(n)?n=n.replace(s,"$1$2"):a.test(n)&&(n=n.replace(a,"$1$2")),s=v,a=y,s.test(n)){var T=s.exec(n);s=u,s.test(T[1])&&(s=g,n=n.replace(s,""))}else if(a.test(n)){var T=a.exec(n);i=T[1],a=d,a.test(i)&&(n=i,a=S,h=w,l=x,a.test(n)?n+="e":h.test(n)?(s=g,n=n.replace(s,"")):l.test(n)&&(n+="e"))}if(s=k,s.test(n)){var T=s.exec(n);i=T[1],n=i+"i"}if(s=b,s.test(n)){var T=s.exec(n);i=T[1],o=T[2],s=u,s.test(i)&&(n=i+t[o])}if(s=E,s.test(n)){var T=s.exec(n);i=T[1],o=T[2],s=u,s.test(i)&&(n=i+e[o])}if(s=_,a=F,s.test(n)){var T=s.exec(n);i=T[1],s=c,s.test(i)&&(n=i)}else if(a.test(n)){var T=a.exec(n);i=T[1]+T[2],a=c,a.test(i)&&(n=i)}if(s=O,s.test(n)){var T=s.exec(n);i=T[1],s=c,a=f,h=N,(s.test(i)||a.test(i)&&!h.test(i))&&(n=i)}return s=P,a=c,s.test(n)&&a.test(n)&&(s=g,n=n.replace(s,"")),"y"==r&&(n=r.toLowerCase()+n.substr(1)),n};return T}(),t.Pipeline.registerFunction(t.stemmer,"stemmer"),t.stopWordFilter=function(e){return e&&t.stopWordFilter.stopWords[e]!==e?e:void 0},t.stopWordFilter.stopWords={a:"a",able:"able",about:"about",across:"across",after:"after",all:"all",almost:"almost",also:"also",am:"am",among:"among",an:"an",and:"and",any:"any",are:"are",as:"as",at:"at",be:"be",because:"because",been:"been",but:"but",by:"by",can:"can",cannot:"cannot",could:"could",dear:"dear",did:"did","do":"do",does:"does",either:"either","else":"else",ever:"ever",every:"every","for":"for",from:"from",get:"get",got:"got",had:"had",has:"has",have:"have",he:"he",her:"her",hers:"hers",him:"him",his:"his",how:"how",however:"however",i:"i","if":"if","in":"in",into:"into",is:"is",it:"it",its:"its",just:"just",least:"least",let:"let",like:"like",likely:"likely",may:"may",me:"me",might:"might",most:"most",must:"must",my:"my",neither:"neither",no:"no",nor:"nor",not:"not",of:"of",off:"off",often:"often",on:"on",only:"only",or:"or",other:"other",our:"our",own:"own",rather:"rather",said:"said",say:"say",says:"says",she:"she",should:"should",since:"since",so:"so",some:"some",than:"than",that:"that",the:"the",their:"their",them:"them",then:"then",there:"there",these:"these",they:"they","this":"this",tis:"tis",to:"to",too:"too",twas:"twas",us:"us",wants:"wants",was:"was",we:"we",were:"were",what:"what",when:"when",where:"where",which:"which","while":"while",who:"who",whom:"whom",why:"why",will:"will","with":"with",would:"would",yet:"yet",you:"you",your:"your"},t.Pipeline.registerFunction(t.stopWordFilter,"stopWordFilter"),t.trimmer=function(t){var e=t.replace(/^\W+/,"").replace(/\W+$/,"");return""===e?void 0:e},t.Pipeline.registerFunction(t.trimmer,"trimmer"),t.TokenStore=function(){this.root={docs:{}},this.length=0},t.TokenStore.load=function(t){var e=new this;return e.root=t.root,e.length=t.length,e},t.TokenStore.prototype.add=function(t,e,n){var n=n||this.root,i=t[0],o=t.slice(1);return i in n||(n[i]={docs:{}}),0===o.length?(n[i].docs[e.ref]=e,void(this.length+=1)):this.add(o,e,n[i])},t.TokenStore.prototype.has=function(t){if(!t)return!1;for(var e=this.root,n=0;n<t.length;n++){if(!e[t[n]])return!1;e=e[t[n]]}return!0},t.TokenStore.prototype.getNode=function(t){if(!t)return{};for(var e=this.root,n=0;n<t.length;n++){if(!e[t[n]])return{};e=e[t[n]]}return e},t.TokenStore.prototype.get=function(t,e){return this.getNode(t,e).docs||{}},t.TokenStore.prototype.count=function(t,e){return Object.keys(this.get(t,e)).length},t.TokenStore.prototype.remove=function(t,e){if(t){for(var n=this.root,i=0;i<t.length;i++){if(!(t[i]in n))return;n=n[t[i]]}delete n.docs[e]}},t.TokenStore.prototype.expand=function(t,e){var n=this.getNode(t),i=n.docs||{},e=e||[];return Object.keys(i).length&&e.push(t),Object.keys(n).forEach(function(n){"docs"!==n&&e.concat(this.expand(t+n,e))},this),e},t.TokenStore.prototype.toJSON=function(){return{root:this.root,length:this.length}},function(t,e){"function"==typeof define&&define.amd?define(e):"object"==typeof exports?module.exports=e():t.lunr=e()}(this,function(){return t})}();
+//-->
+</script>
+    <script  style="display:none">
+<!--
+(function ($) {
+  $(document).ready(function() {
+    window.index = lunr(function () {
+      this.field('title', {boost: 10});
+      this.field('body');
+      this.ref('href');
+    });
+    window.index.pipeline.reset();
+
+    window.index.add({
+      href: 'http://materializecss.com/about.html',
+      title: 'About',
+      body: 'Created and designed by Google, Material Design is a design language that combines the classic principles of successful design along with innovation and technology. Google"s goal is to develop a system of design that allows for a unified user experience across all their products on any platform.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/badges.html',
+      title: 'Badges',
+      body: 'Badges can notify you that there are new or unread messages or notifications.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/buttons.html',
+      title: 'Buttons',
+      body: 'There are 3 main button types described in material design. The raised button is a standard button that signify actions and seek to give depth to a mostly flat page. The floating circular action button is meant for very important functions. Flat buttons are usually used within elements that already have depth like cards or modals.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/breadcrumbs.html',
+      title: 'Breadcrumbs',
+      body: 'There are 3 main button types described in material design. The raised button is a standard button that signify actions and seek to give depth to a mostly flat page. The floating circular action button is meant for very important functions. Flat buttons are usually used within elements that already have depth like cards or modals.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/cards.html',
+      title: 'Cards',
+      body: 'Breadcrumbs are a good way to display your current location. This is usually used when you have multiple layers of content.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/chips.html',
+      title: 'Chips',
+      body: 'Chips can be used to represent small blocks of information. They are most commonly used either for contacts or for tags.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/collapsible.html',
+      title: 'Collapsible',
+      body: 'Collapsibles are accordion elements that expand when clicked on. They allow you to hide content that is not immediately relevant to the user.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/collections.html',
+      title: 'Collections',
+      body: 'Collections allow you to group list objects together.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/color.html',
+      title: 'Color',
+      body: 'Here is a color palette based on the material design base colors. Each of these colors is defined with a base color class and an optional lighten or darken class.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/dialogs.html',
+      title: 'dialogs tooltips toasts',
+      body: 'Dialogs are content that are not original visible on a page but show up with extra information if needed. The transitions should make the appearance of the dialog make sense and not jarring to the user.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/dropdown.html',
+      title: 'dropdown',
+      body: 'Add a dropdown list to any button.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/footer.html',
+      title: 'footer',
+      body: 'Footers are a great way to organize a lot of site navigation and information at the end of a page. This is where the user will look once hes finished scrolling through the current page or is looking for additional information about your website.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/forms.html',
+      title: 'forms select radio checkbox switch range textarea',
+      body: 'Forms are the standard way to receive user inputted data. The transitions and smoothness of these elements are very important because of the inherent user interaction associated with forms.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/fullscreen-slider-demo.html',
+      title: 'Fullscreen slider demo',
+      body: 'Fullscreen slider demo'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/getting-started.html',
+      title: 'Getting Started',
+      body: 'Learn how to easily start using Materialize in your website.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/grid.html',
+      title: 'Grid',
+      body: 'We are using a standard 12 column fluid responsive grid system. The grid helps you layout your page in an ordered, easy fashion.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/helpers.html',
+      title: 'Helpers',
+      body: 'helper classes'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/icons.html',
+      title: 'icons',
+      body: 'We have included 740 Material Design Icons courtesy of Google'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/media-css.html',
+      title: 'Media CSS',
+      body: 'Media CSS classes'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/media.html',
+      title: 'Media JavaScript slider materialbox',
+      body: 'Media components include things that have to do with large media objects like Images, Video, Audio, etc.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/mobile.html',
+      title: 'Mobile',
+      body: 'Mobile only interactive components.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/modals.html',
+      title: 'modals',
+      body: 'Use a modal for dialog boxes, confirmation messages, or other content that can be called up.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/navbar.html',
+      title: 'navbar',
+      body: 'The navbar is fully contained by an HTML5 Nav tag. Inside a recommended container div, there are 2 main parts of the navbar. A logo or brand link, and the navigations links. You can align these links to the left or right.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/pagination.html',
+      title: 'pagination',
+      body: 'Add pagination links to help split up your long content into shorter, easier to understand blocks.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/parallax.html',
+      title: 'parallax',
+      body: 'Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/preloader.html',
+      title: 'preloader',
+      body: 'If you have content that will take a long time to load, you should give the user feedback. For this reason we provide a number activity + progress indicators.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/pushpin.html',
+      title: 'Pushpin',
+      body: 'Pushpin is our fixed positioning plugin. You can check out our live examples: the fixed Table of Contents on the right.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/sass.html',
+      title: 'Sass',
+      body: 'When using Sass, you can change the color scheme of your site extremely quickly.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/scrollfire.html',
+      title: 'scrollFire',
+      body: 'ScrollFire is a jQuery Plugin that executes callback functions depending on how far into the page you"ve scrolled.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/scrollspy.html',
+      title: 'scrollspy',
+      body: 'Scrollspy is a jQuery plugin that tracks certain elements and which element the users screen is currently centered on.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/shadow.html',
+      title: 'shadow',
+      body: 'In material design, everything should have a certain z-depth that determines how far raised or close to the page the element is.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/showcase.html',
+      title: 'showcase',
+      body: 'Here is our showcase of websites that use materialize.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/side-nav.html',
+      title: 'sideNav side Nav',
+      body: 'This is a slide out menu. You can add a dropdown to your sidebar by using our collapsible component.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/table.html',
+      title: 'table',
+      body: 'Tables are a nice way to organize a lot of data. We provide a few utility classes to help you style your table as easily as possible.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/tabs.html',
+      title: 'tabs',
+      body: 'The tabs structure consists of an unordered list of tabs that have hashes corresponding to tab ids. Then when you click on each tab, only the container with the corresponding tab id will become visible.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/transitions.html',
+      title: 'transitions animation',
+      body: 'Weve made some custom animation functions that will transition your content.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/typography.html',
+      title: 'Typography',
+      body: 'font, headers, blockquotes, flow text.'
+    });
+
+    window.index.add({
+      href: 'http://materializecss.com/waves.html',
+      title: 'waves',
+      body: 'Waves is an external library that weve included in Materialize to allow us to create the ink effect outlined in Material Design'
+    });
+
+    // icon click
+    $('ul#nav-mobile li.search .search-wrapper i.material-icons').click(function() {
+      if ($('.search-results .focused').length) {
+        $('.search-results .focused').first()[0].click();
+      } else if ($('.search-results').children().length) {
+        $('.search-results').children().first()[0].click();
+      }
+    });
+
+    var renderResults = function(results) {
+      var resultsContainer = $('.search-results');
+      resultsContainer.empty();
+      Array.prototype.forEach.call(results, function(result) {
+        var resultDiv = $('<a href=' + result[1] + '>' + result[0] + '</a>');
+        resultsContainer.append(resultDiv);
+      });
+    };
+
+    var debounce = function (fn) {
+      var timeout;
+      return function () {
+        var args = Array.prototype.slice.call(arguments),
+            ctx = this;
+
+        clearTimeout(timeout);
+        timeout = setTimeout(function () {
+          fn.apply(ctx, args);
+        }, 100);
+      };
+    };
+
+    $('input#search').focus(function() { $(this).parent().addClass('focused'); });
+    $('input#search').blur(function() {
+      if (!$(this).val()) {
+        $(this).parent().removeClass('focused');
+      }
+    });
+
+    $('input#search').bind('keyup', debounce(function (e) {
+      if ($(this).val() < 2) {
+        renderResults([]);
+        return;
+      }
+
+      if (e.which === 38 || e.which === 40 || e.keyCode === 13) return;
+
+      var query = $(this).val();
+      var results = window.index.search(query).slice(0, 6).map(function (result) {
+        var href = result.ref.split('http://materializecss.com/')[1];
+        return [href.charAt(0).toUpperCase() + href.slice(1), result.ref];
+      });
+      renderResults(results);
+    }));
+
+
+    $('input#search').bind('keydown', debounce(function (e) {
+      // Escape.
+      if (e.keyCode === 27) {
+        $(this).val('');
+        $(this).blur();
+        renderResults([]);
+        return;
+      } else if (e.keyCode === 13) {
+        // enter
+        if ($('.search-results .focused').length) {
+          $('.search-results .focused').first()[0].click();
+        } else if ($('.search-results').children().length) {
+          $('.search-results').children().first()[0].click();
+        }
+        return;
+      }
+
+      // Arrow keys.
+      var focused;
+      switch(e.which) {
+        case 38: // up
+          if ($('.search-results .focused').length) {
+            focused = $('.search-results .focused');
+            focused.removeClass('focused');
+            focused.prev().addClass('focused');
+          }
+          break;
+
+        case 40: // down
+          if (!$('.search-results .focused').length) {
+            focused = $('.search-results').children().first();
+            focused.addClass('focused');
+          } else {
+            focused = $('.search-results .focused');
+            if (focused.next().length) {
+              focused.removeClass('focused');
+              focused.next().addClass('focused');
+            }
+          }
+          break;
+
+        default: return; // exit this handler for other keys
+      }
+      e.preventDefault();
+    }));
+
+
+
+  });
+}( jQuery ));
+//-->
+</script>
+    <script src="bin/materialize.js"></script>
+    <script  style="display:none">
+<!--
+(function($){
+  $(function(){
+
+    var window_width = $(window).width();
+
+    // convert rgb to hex value string
+    function rgb2hex(rgb) {
+      if (/^#[0-9A-F]{6}$/i.test(rgb)) { return rgb; }
+
+      rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+
+      if (rgb === null) { return "N/A"; }
+
+      function hex(x) {
+          return ("0" + parseInt(x).toString(16)).slice(-2);
+      }
+
+      return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+    }
+
+    $('.dynamic-color .col').each(function () {
+      $(this).children().each(function () {
+        var color = $(this).css('background-color'),
+            classes = $(this).attr('class');
+        $(this).html(rgb2hex(color) + " " + classes);
+        if (classes.indexOf("darken") >= 0 || $(this).hasClass('black')) {
+          $(this).css('color', 'rgba(255,255,255,.9');
+        }
+      });
+    });
+
+
+    // Floating-Fixed table of contents
+    setTimeout(function() {
+      var tocWrapperHeight = 260; // Max height of ads.
+      var tocHeight = $('.toc-wrapper .table-of-contents').length ? $('.toc-wrapper .table-of-contents').height() : 0;
+      var socialHeight = 95; // Height of unloaded social media in footer.
+      var bottomOffset = $('footer').offset().top - socialHeight - tocHeight - tocWrapperHeight;
+
+      if ($('nav').length) {
+        $('.toc-wrapper').pushpin({
+          top: $('nav').height(),
+          bottom: bottomOffset
+        });
+      }
+      else if ($('#index-banner').length) {
+        $('.toc-wrapper').pushpin({
+          top: $('#index-banner').height(),
+          bottom: bottomOffset
+        });
+      }
+      else {
+        $('.toc-wrapper').pushpin({
+          top: 0,
+          bottom: bottomOffset
+        });
+      }
+    }, 100);
+
+
+
+    // BuySellAds Detection
+    var $bsa = $(".buysellads"),
+        $timesToCheck = 3;
+    function checkForChanges() {
+        if (!$bsa.find('#carbonads').length) {
+          $timesToCheck -= 1;
+          if ($timesToCheck >= 0) {
+            setTimeout(checkForChanges, 500);
+          }
+          else {
+            var donateAd = $('<div id="carbonads"><span><a class="carbon-text" href="#!" onclick="document.getElementById(\'paypal-donate\').submit();"><img src="images/donate.png" /> Help support us by turning off adblock. If you still prefer to keep adblock on for this page but still want to support us, feel free to donate. Any little bit helps.</a></form></span></div>');
+
+            $bsa.append(donateAd);
+          }
+        }
+
+    }
+    checkForChanges();
+
+
+    // Github Latest Commit
+    if ($('.github-commit').length) { // Checks if widget div exists (Index only)
+      $.ajax({
+        url: "https://api.github.com/repos/dogfalo/materialize/commits/master",
+        dataType: "json",
+        success: function (data) {
+          var sha = data.sha,
+              date = jQuery.timeago(data.commit.author.date);
+          if (window_width < 1120) {
+            sha = sha.substring(0,7);
+          }
+          $('.github-commit').find('.date').html(date);
+          $('.github-commit').find('.sha').html(sha).attr('href', data.html_url);
+        }
+      });
+    }
+
+    // Toggle Flow Text
+    var toggleFlowTextButton = $('#flow-toggle');
+    toggleFlowTextButton.click( function(){
+      $('#flow-text-demo').children('p').each(function(){
+          $(this).toggleClass('flow-text');
+        });
+    });
+
+//    Toggle Containers on page
+    var toggleContainersButton = $('#container-toggle-button');
+    toggleContainersButton.click(function(){
+      $('body .browser-window .container, .had-container').each(function(){
+        $(this).toggleClass('had-container');
+        $(this).toggleClass('container');
+        if ($(this).hasClass('container')) {
+          toggleContainersButton.text("Turn off Containers");
+        }
+        else {
+          toggleContainersButton.text("Turn on Containers");
+        }
+      });
+    });
+
+    // Detect touch screen and enable scrollbar if necessary
+    function is_touch_device() {
+      try {
+        document.createEvent("TouchEvent");
+        return true;
+      } catch (e) {
+        return false;
+      }
+    }
+    if (is_touch_device()) {
+      $('#nav-mobile').css({ overflow: 'auto'});
+    }
+
+    // Set checkbox on forms.html to indeterminate
+    var indeterminateCheckbox = document.getElementById('indeterminate-checkbox');
+    if (indeterminateCheckbox !== null)
+      indeterminateCheckbox.indeterminate = true;
+
+
+    // Plugin initialization
+    $('.carousel.carousel-slider').carousel({full_width: true});
+    $('.carousel').carousel();
+    $('.slider').slider({full_width: true});
+    $('.parallax').parallax();
+    $('.modal-trigger').leanModal();
+    $('.scrollspy').scrollSpy();
+    $('.button-collapse').sideNav({'edge': 'left'});
+    $('.datepicker').pickadate({selectYears: 20});
+    $('select').not('.disabled').material_select();
+
+
+  }); // end of document ready
+})(jQuery); // end of jQuery name space
+
+//-->
+</script>
+    <!-- Twitter Button -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+    <!-- Google Plus Button-->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <!--  Google Analytics  -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-56218128-1', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+    </script>
+
+  </body>
+</html>
