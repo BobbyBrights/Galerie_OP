@@ -11,7 +11,7 @@
     flex: 1 0 auto;
   }
     header, main, footer {
-      padding-left: 240px;
+      padding-left: 0px;
     }
 
     @media only screen and (max-width : 992px) {
@@ -32,3 +32,8 @@ border: 2px solid black;
       background-color: rgba(121, 85, 72, 0.65);
     }
           
+div.col {
+  width:200px;
+  padding:40px;
+  color #00ff7c
+}
