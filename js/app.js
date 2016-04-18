@@ -1,61 +1,54 @@
-$( document ).ready(function(){})
-$(".button-collapse").sideNav();
+// Initialize collapse button
+  $(".button-collapse").sideNav();
+  // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+  $('.collapsible').collapsible();
+  $('.button-collapse').sideNav({
+      menuWidth: 200, // Default is 240
+      edge: 'right', // Choose the horizontal origin
+      closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    }
+  );
+  $('.button-collapse').sideNav('show');
 
 $(document).ready(function(){
-$('.tabs-wrapper .row').pushpin({ top: $('.tabs-wrapper').offset().top });
-});
-
-$(document).ready(function(){
-$('.materialboxed').materialbox();
-});
-
-$(document).ready(function(){
-$('.slider').slider();
-});
+    $('.materialboxed').materialbox();
+  });
 
 
-$(document).ready(function(){
-    $('.modal-trigger').leanModal();
-});
+  $(document).ready(function(){
+    $('.scrollspy').scrollSpy();
+  });
+        
 
- $('#modal1').openModal();
+
+  var options = [
+    {selector: '.class', offset: 200, callback: customCallbackFunc } },
+    {selector: '.other-class', offset: 200, callback: function() {
+      customCallbackFunc();
+    } },
+  ];
+  Materialize.scrollFire(options);
 
 
-$(document).ready(function(){
-  $('.carousel').carousel();
-});
 
+  $(document).ready(function(){
+    $('.collapsible').collapsible({
+      expandable : true // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
+  });
+
+    $(document).ready(function(){
+      $('.carousel').carousel();
+    });
+        
+    $(document).ready(function(){
+      $('.slider').slider({full_width: true});
+    });
+        
 // Next slide
 $('.carousel').carousel('next');
 $('.carousel').carousel('next', [3]); // Move next n times.
 // Previous slide
 $('.carousel').carousel('prev');
 $('.carousel').carousel('prev', [4]); // Move prev n times.
-
-// Pause slider
-$('.slider').slider('pause');
-// Start slider
-$('.slider').slider('start');
-// Next slide
-$('.slider').slider('next');
-// Previous slide
-$('.slider').slider('prev');
-
-
-$(document).ready(function(){
-$('.materialboxed').materialbox();
-});
-
-$(document).ready(function(){
-  $('.scrollspy').scrollSpy();
-});
-
-$(document).ready(function(){
-  $('.parallax').parallax();
-});
-
-var options = [
-  {selector: '.class', offset: 200, callback: 'globalFunction()' },
-  {selector: '.other-class', offset: 200, callback: 'globalFunction()' },
-];
-Materialize.scrollFire(options);
+      

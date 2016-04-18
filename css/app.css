@@ -1,39 +1,35 @@
-  body {
-  	color:black;
-	background-color:white;
-	background-image:url();
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
 
-  main {
-    flex: 1 0 auto;
-  }
+
     header, main, footer {
-      padding-left: 0px;
+      background: white url(../images/background.png) fixed no-repeat center center ;
+      padding-left: 300px;
     }
 
-    @media only screen and (max-width : 992px) {
+    @media only screen and (max-width : 1080px) {
       header, main, footer {
         padding-left: 0;
       }
     }
-/* col{
-border: 2px solid black;
+
+
+.divider{
+  background: #0DFF04;
 }
-    /*
-    When creating your CSS selector,
-    change "brown" to something of your choosing
-    */
-    .waves-effect.waves-green .waves-ripple {
-     /* The alpha value allows the text and background color
-     of the button to still show through. */
-      background-color: rgba(121, 85, 72, 0.65);
-    }
-          
-div.col {
-  width:200px;
-  padding:40px;
-  color #00ff7c
+.table-of-contents{
+    height: 200px;
+    width: 400px;
+
+    position: fixed;
+    top: 50%;
+    margin-top: -100px;
 }
+
+.collapsible{
+  background;
+}
+
+.fixe{
+  border: 10px solid #0DFF04;
+  float: center;
+  padding: 2.08%;
+  }
