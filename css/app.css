@@ -1,9 +1,35 @@
-.ok{
- margin-left: 400px;
+
+header, body, footer {
+  padding-right: 82px;
 }
-         
+
+@media only screen and (max-width : 1600px) {
+  header, body, footer {
+    padding-left: 264px;
+  }
+}
+
+.interlignage{ 
+      line-height:14px; 
+}
+
+
+.fixe{
+  border: 5px solid #0DFF04;
+  float: center;
+  padding: 2.08%;
+  }
+  
+.side-nav{
+  width: 182px;
+}
+
+.facade{
+  background: url('../images/fondation/facade_galerie.jpg') no-repeat;
+  background-size: 678px
+}   
 .slider{
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .vert{
@@ -13,48 +39,61 @@
     margin-left: 15px;
     margin-top: -30px;
     margin-bottom: -30px;
-
-
 }
 
-.prsnt{
-   background: white url(../images/fondation/exposition-en-cours.svg) no-repeat center center ;
+@font-face {
+font-family: 'bold-condensed';
+src: url('../fonts/neuzeit-grotesk-lt-bold-condensed.otf');
+src: url('../fonts/neuzeit-grotesk-lt-bold-condensed.ttf') format('truetype'),
+     url('../fonts/neuzeit-grotesk-lt-bold-condensed.woff') format('woff'),
+font-weight: normal;
+font-style: normal;
 }
 
-.btmnt{
-   background: white url(../images/fondation/exposition2-politiquement-correcte.svg) no-repeat center center ;
+
+
+span{
+  font-family:bold-condensed;
+  font-size: 14pt;
 }
 
-.fixe{
-  border: 5px solid #0DFF04;
-  float: center;
-  padding: 2.08%;
-  }
+p
+{
+  font-family:bold-condensed;
+  font-size: 15px;
+}
 
-    /* label color */
-   .input-field label {
-     color: #000;
-   }
-   /* label focus color */
-   .input-field input[type=text]:focus + label {
-     color: #000;
-   }
-   /* label underline focus color */
-   .input-field input[type=text]:focus {
-     border-bottom: 1px solid #000;
-     box-shadow: 0 1px 0 0 #000;
-   }
-   /* valid color */
-   .input-field input[type=text].valid {
-     border-bottom: 1px solid #000;
-     box-shadow: 0 1px 0 0 #000;
-   }
-   /* invalid color */
-   .input-field input[type=text].invalid {
-     border-bottom: 1px solid #000;
-     box-shadow: 0 1px 0 0 #000;
-   }
-   /* icon prefix focus color */
-   .input-field .prefix.active {
-     color: #000;
-   }
+h6
+{
+  font-family:bold-condensed;
+  font-size: 30px;
+}
+
+h5
+{
+  font-family:bold-condensed;
+  font-size: 20px;
+}
+
+
+h3
+{
+  font-family:bold-condensed;
+  font-size: 30pt;
+}
+
+
+@font-face {
+font-family: 'light';
+src: url('../fonts/qneuzeit-grotesk-lt-light.otf');
+src: url('../fonts/neuzeit-grotesk-lt-light.ttf') format('truetype'),
+     url('../fonts/neuzeit-grotesk-lt-light.woff') format('woff'),
+font-weight: normal;
+font-style: normal;
+}
+
+h4
+{
+  font-family:light;
+  font-size: 14px;
+}

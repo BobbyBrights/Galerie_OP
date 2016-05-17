@@ -1,6 +1,6 @@
         $(document).ready(function(){
           $('.button-collapse').sideNav({
-            menuWidth: 900, // Default is 240
+            menuWidth: 240, // Default is 240
             edge: 'right', // Choose the horizontal origin
             closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
             }
@@ -13,3 +13,6 @@
           });
           $('.materialboxed').materialbox();
         });
+          $(document).ready(function() {
+    Materialize.updateTextFields();
+  });
